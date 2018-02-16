@@ -22,8 +22,10 @@ class Post extends Component {
     }
   }
   changeBody (e) {
+    e.preventDefault()
+    var bodyVal = e.target.querySelector('input[type=text]').value
     this.setState({
-      body: prompt('What should the new body be?', '')
+      body: bodyVal
     })
   }
 
@@ -45,7 +47,11 @@ class Post extends Component {
         </header>
         <p>{allAuthors}</p>
         <p>{this.state.body}</p>
-        <button onClick={(e) => this.changeBody(e)} >Edit Body</button>
+
+        <form onSubmit={(e) => this.changeBody(e)}>
+        <input type="submit" value="Edit body" />
+        <input type="text" />
+        </form>
         <h4><b>Comments:</b></h4>
         <p className="App-intro">
           {allComments}
