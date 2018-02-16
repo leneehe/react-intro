@@ -15,6 +15,18 @@ class Author extends Component {
 }
 
 class Post extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      body: props.body
+    }
+  }
+  changeBody (e) {
+    this.setState({
+      body: prompt('What should the new body be?', '')
+    })
+  }
+
   render() {
     let allComments = [
       <Comment body={this.props.comments[0]} />,
@@ -32,7 +44,8 @@ class Post extends Component {
           <h1 className="App-title">{this.props.title}</h1>
         </header>
         <p>{allAuthors}</p>
-        <p>{this.props.body}</p>
+        <p>{this.state.body}</p>
+        <button onClick={(e) => this.changeBody(e)} >Edit Body</button>
         <h4><b>Comments:</b></h4>
         <p className="App-intro">
           {allComments}
