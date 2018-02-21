@@ -3,4 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import MyList from './MyList';
 
-ReactDOM.render(<MyList />, document.getElementById('root'));
+var toDos = ["Buy ice cream", "Eat ice cream", "Go to gym"]
+
+ReactDOM.render(<MyList theList={toDos} />, document.getElementById('root'));
