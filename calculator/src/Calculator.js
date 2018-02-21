@@ -11,10 +11,10 @@ class Calculator extends Component {
   }
 
   addNumbers (e) {
-    var num1 = parseInt(e.target.closest('div').querySelector('input#num1').value),
-        num2 = parseInt(e.target.closest('div').querySelector('input#num2').value);
+    var num1 = parseInt(this.refs.num1.value) || 0,
+        num2 = parseInt(this.refs.num2.value) || 0;
     var sum = num1 + num2
-    
+
     this.setState({
       sum: sum
     })
@@ -27,9 +27,9 @@ class Calculator extends Component {
         <h1>Add with React!</h1>
 
         <div className="add">
-          <input id="num1" type="text" placeholder="1" onChange={(e) => this.addNumbers(e)} />
+          <input ref="num1" type="text" placeholder="1" onChange={(e) => this.addNumbers(e)} />
           <span>+</span>
-          <input id="num2" type="text" placeholder="2" onChange={(e) => this.addNumbers(e)} />
+          <input ref="num2" type="text" placeholder="2" onKeyUp={(e) => this.addNumbers(e)} />
           <span>=</span>
           <h3>{this.state.sum}</h3>
         </div>
