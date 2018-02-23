@@ -4,7 +4,7 @@ import './index.css';
 import Post from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-var post = {
+const post = {
   title: "Bitmaker is awesome",
   body: "Check out this body property!",
   comments: [
@@ -15,5 +15,5 @@ var post = {
   ]
 }
 
-ReactDOM.render(<Post title={post.title} author={post.author} body={post.body} comments={post.comments} authors={post.authors} />, document.getElementById('root'));
+ReactDOM.render(<Post title={post.title} body={post.body} comments={post.comments} authors={post.authors} />, document.getElementById('root'));
 registerServiceWorker();
