@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import ListItem from './ListItem'
+import ToDoList from './ToDoList'
+//import ListItem from './ListItem'
 import './App.css';
 
 class MyList extends Component {
@@ -39,14 +40,12 @@ class MyList extends Component {
 
   render() {
 
-    let todoItems = this.state.toDoItemArray.map((item, index) => (<ListItem doThis={item} key={index} />))
+    //let todoItems = this.state.toDoItemArray.map((item, index) => (<ListItem doThis={item} key={index} />))
 
     return (
       <div>
         <h1> Things I should stop procrastinating: </h1>
-        <ul>
-          {todoItems}
-        </ul>
+        <ToDoList toDoItemArray={this.state.toDoItemArray} />
         <button onClick={(e) => this.clearList(e)}>Finished the list!</button>
         <form>
           <input type="text" placeholder="Type an item here" onChange={(e) => this.newItemChange(e)} value={this.state.newItem} />
