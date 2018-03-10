@@ -4,7 +4,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <header>
+        <header class="App-header">
           <h1>Dentist Website</h1>
         </header>
         <p>
