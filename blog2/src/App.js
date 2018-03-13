@@ -28,10 +28,16 @@ const App = props => (
     <div className="App">
       <header className="App-header">
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/blog">My Blog</Link>
-          <Link to="/movie">Favourite Movies</Link>
-          <Link to="/food">Favourite Food</Link>
+        {/*
+      The {" "} things are inserted after every link so React puts
+      some empty whitespace between each link instead of cramming
+      them all together.
+      Also, this comment syntax is how you do comments in JSX.
+      */}
+          <Link to="/">Home</Link>{' '}
+          <Link to="/blog">My Blog</Link>{' '}
+          <Link to="/movie">Favourite Movies</Link>{' '}
+          <Link to="/food">Favourite Food</Link>{' '}
           <Link to="/about">About Me</Link>
         </nav>
         <h1 className="App-title">Welcome to My Home Page</h1>
