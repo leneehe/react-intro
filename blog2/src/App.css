@@ -38,7 +38,8 @@ h1 {
 
 h2 {
   font-size: 24px;
-  color: #046380;
+  color: #FFF;
+  text-shadow: 2px 2px 1px #046380;
   text-align: center;
   font-family: "Spectral", serif;
 }
@@ -50,6 +51,11 @@ h3 {
   font-family: "Spectral", serif;
 }
 
+ul {
+  margin: auto;
+  text-align: center;
+  list-style-position: inside;
+}
 
 .App {
   text-align: center;

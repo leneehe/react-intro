@@ -12,6 +12,17 @@ import {
 
 import './App.css';
 
+const Home = props => (
+  <div className="App">
+    <h1 className="App-title">My Blog Home</h1>
+    <p className="App-intro">
+      Welcome to the Home page of My Blog</p>
+    <p>
+      Click on the links above to nagivate!
+    </p>
+  </div>
+)
+
 const App = props => (
   <Router>
     <div className="App">
@@ -25,10 +36,21 @@ const App = props => (
         </nav>
         <h1 className="App-title">Welcome to My Home Page</h1>
       </header>
-      <Route exact path="/" component={Post}/>
-      <Route path="/blog" component={Post}/>
-      <Route path="/movie" component={Movie}/>
-      <Route path="/food" component={Food} />
+      <Route exact path="/" component={Home}/>
+      <Route path="/blog" component={
+        () => (<Post title={props.post.title}
+                    author={props.post.author}
+                    body={props.post.body}
+                    comments={props.post.comments}
+        />
+      )}/>
+
+      <Route path="/movie" component={() => (
+        <Movie movies={props.movies} />
+      )}/>
+      <Route path="/food" component={() => (
+        <Food foods={props.foods}/>
+      )} />
       <Route path="/about" component={About} />
     </div>
   </Router>
