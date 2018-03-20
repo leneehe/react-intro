@@ -12,16 +12,29 @@ import {
 
 import './App.css';
 
-const Home = props => (
-  <div className="App">
-    <h1 className="App-title">My Blog Home</h1>
-    <p className="App-intro">
+class Home extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+
+  }
+
+  render() {
+    return (
+      <div className="App">
+      <h1 className="App-title">My favourite Shakespeare poem:</h1>
+      <p className="App-intro">
       Welcome to the Home page of My Blog</p>
-    <p>
+      <p>
       Click on the links above to nagivate!
-    </p>
-  </div>
-)
+      </p>
+      </div>
+    )
+  }
+}
+
 
 const App = props => (
   <Router>
