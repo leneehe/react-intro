@@ -15,10 +15,22 @@ import './App.css';
 class Home extends Component {
   constructor(props) {
     super(props)
+    this.state = { poem: "" }
   }
 
   componentDidMount() {
-
+    var base = this;
+    let shakespeare = 'http://shakeitspeare.com/api/poem';
+    fetch(shakespeare)
+    .then(data => {
+      return data.json()
+    }).then(json => {
+      base.setState({
+        poem: json.poem
+      })
+    }).catch(ex => {
+      console.log('An error occured while parsing!', ex)
+    })
   }
 
   render() {
@@ -26,7 +38,8 @@ class Home extends Component {
       <div className="App">
       <h1 className="App-title">My favourite Shakespeare poem:</h1>
       <p className="App-intro">
-      Welcome to the Home page of My Blog</p>
+      {this.state.poem}
+      </p>
       <p>
       Click on the links above to nagivate!
       </p>
