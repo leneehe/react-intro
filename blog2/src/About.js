@@ -22,7 +22,8 @@ class About extends Component {
         weatherapi = `http://samples.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=052f26926ae9784c2d677ca7bc5dec98`
     alert('Zipcode is submitted: ' + zip)
     console.log(weatherapi)
-    fetch(weatherapi, {mode: 'cors'}).then((response) => {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch(proxyurl + weatherapi).then((response) => {
       return response.json()
     }).then((json) => {
       console.log('got json', json)
