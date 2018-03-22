@@ -34,17 +34,21 @@ class Home extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-      <h1 className="App-title">My favourite Shakespeare poem:</h1>
-      <p className="App-intro">
-      {this.state.poem}
-      </p>
-      <p>
-      Click on the links above to nagivate!
-      </p>
-      </div>
-    )
+    if (this.state.poem) { //check that fetch() has completed
+      return (
+        <div className="App">
+        <h1 className="App-title">My favourite Shakespeare poem:</h1>
+        <p className="App-intro">
+        {this.state.poem}
+        </p>
+        <p>
+        Click on the links above to nagivate!
+        </p>
+        </div>
+      )
+    } else {
+      return "Loading..."
+    }
   }
 }
 
